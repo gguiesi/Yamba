@@ -4,25 +4,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
+    android:layout_height="fill_parent">
+	<!-- Text Counter TextView -->
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="right"
+		android:id="@+id/textCount"
+		android:text="000"
+		android:gravity="top|center_horizontal"/>
+    
     <!-- title TextView -->
 	<TextView android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content" 
 	    android:gravity="center"
 	    android:textSize="30sp"
 	    android:layout_margin="10dp"
-	    android:text="@string/titleStatus"
-	    />
+	    android:text="@string/titleStatus"/>
+	    
 	<!-- Status EditText -->
 	<EditText android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:layout_weight="1"
 		android:hint="@string/hintText"
 		android:id="@+id/editText"
-		android:gravity="top|center_horizontal"
-		/>
-	
+		android:gravity="top|center_horizontal"/>
+		
 	<!-- UpdateButton -->
 	<Button android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
