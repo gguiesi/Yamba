@@ -4,14 +4,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent" 
+    android:background="@drawable/background">
     <!-- title TextView -->
 	<TextView android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content" 
 	    android:gravity="center"
 	    android:textSize="30sp"
 	    android:layout_margin="10dp"
-	    android:text="@string/titleStatus"/>
+	    android:text="@string/titleStatus"
+	    android:textColor="@android:color/white"/>
 	<!-- Status EditText -->
 	<TextView android:layout_height="wrap_content" 
 		android:gravity="right" 
@@ -25,7 +27,8 @@
 		android:layout_weight="1"
 		android:hint="@string/hintText"
 		android:id="@+id/editText"
-		android:gravity="top|center_horizontal"/>
+		android:gravity="top|center_horizontal"
+		android:background="#cfff"/>
 		
 	<!-- UpdateButton -->
 	<Button android:layout_width="fill_parent"
