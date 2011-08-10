@@ -15,6 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PrefsActivity"
+        		android:label="@string/titlePrefs">
+        </activity>
 
     </application>
 </manifest>
