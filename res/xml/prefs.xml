@@ -7,10 +7,10 @@
 		
 	<EditTextPreference android:key="password" 
 		android:title="@string/titlePassword" 
-		android:summary="@string/summaryPassword" 
-		android:password="true"></EditTextPreference>
+		android:summary="@string/summaryPassword" android:password="true"></EditTextPreference>
 		
 	<EditTextPreference android:key="apiRoot" 
 		android:title="@string/titleApiRoot" 
 		android:summary="@string/summaryApiRoot"></EditTextPreference>
+		
 </PreferenceScreen>

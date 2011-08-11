@@ -2,5 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 	
 	<item android:title="@string/titlePrefs" 
-		android:id="@+id/itemPrefs"></item>
+		android:id="@+id/itemPrefs" 
+		android:icon="@android:drawable/ic_menu_preferences"></item>
 </menu>
