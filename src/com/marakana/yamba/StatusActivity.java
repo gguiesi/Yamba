@@ -32,7 +32,6 @@ public class StatusActivity extends Activity implements OnClickListener, TextWat
 	SharedPreferences prefs;
 
 	/** Called when the activity is first created. */
-	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		Log.d(TAG, "onCreate");
@@ -51,26 +50,6 @@ public class StatusActivity extends Activity implements OnClickListener, TextWat
 		
 		prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		prefs.registerOnSharedPreferenceChangeListener(this);
-//		twitter = new Twitter("student", "password");
-//		twitter.setAPIRootUrl("http://yamba.marakana.com/api");
-	}
-	
-	@SuppressWarnings({ "unused", "deprecation" })
-	private Twitter getTwitter() {
-		Log.d(TAG, "getTwitter");
-		if (twitter == null) {
-			String username;
-			String password;
-			String apiRoot;
-			username = prefs.getString("username", "");
-			password = prefs.getString("password", "");
-			apiRoot = prefs.getString("apiRoot", "http://yamba.marakana.com/api");
-			
-			//Connect to Twitter.com
-			twitter = new Twitter(username, password);
-			twitter.setAPIRootUrl(apiRoot);
-		}
-		return  twitter;
 	}
 	
 	class PostToTwitter extends AsyncTask<String, Integer, String> {
@@ -79,7 +58,8 @@ public class StatusActivity extends Activity implements OnClickListener, TextWat
 		protected String doInBackground(String... statuses) {
 			Log.d(TAG, "doInBackground");
 			try {
-				Twitter.Status status = twitter.updateStatus(statuses[0]);
+				YambaApplication yambaApplication = (YambaApplication) getApplication();
+				Twitter.Status status = yambaApplication.getTwitter().updateStatus(statuses[0]);
 				return status.text;
 			} catch (TwitterException e) {
 				Log.e(TAG, e.toString());
@@ -102,9 +82,9 @@ public class StatusActivity extends Activity implements OnClickListener, TextWat
 	}
 
 	public void onClick(View v) {
-		Log.d(TAG, "onClicked");
 		try {
-			getTwitter().setStatus(editText.getText().toString());
+			new PostToTwitter().execute(editText.getText().toString());
+			Log.d(TAG, "onClick");
 		} catch (TwitterException e) {
 			Log.d(TAG, "Twitter setStatus failed: " + e);
 		}
@@ -148,6 +128,12 @@ public class StatusActivity extends Activity implements OnClickListener, TextWat
 		switch (item.getItemId()) {
 		case R.id.itemPrefs:
 			startActivity(new Intent(this, PrefsActivity.class));
+			break;
+		case R.id.itemServiceStart:
+			startService(new Intent(this, UpdateService.class));
+			break;
+		case R.id.itemServiceStop:
+			stopService(new Intent(this, UpdateService.class));
 			break;
 		}
 		
