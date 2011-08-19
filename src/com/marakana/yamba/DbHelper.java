@@ -12,7 +12,7 @@ public class DbHelper extends SQLiteOpenHelper {
 	static final int DB_VERSION = 1;
 	static final String TABLE = "timeline";
 	static final String C_ID = BaseColumns._ID;
-	static final String C_CREATE_AT = "create_at";
+	static final String C_CREATED_AT = "created_at";
 	static final String C_SOURCE = "source";
 	static final String C_TEXT = "txt";
 	static final String C_USER = "user";
@@ -26,7 +26,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		String sql = "create table " + TABLE + " (" + C_ID + " int primary key, " + C_CREATE_AT + " int, " + C_SOURCE + " text, " 
+		String sql = "create table " + TABLE + " (" + C_ID + " int primary key, " + C_CREATED_AT + " int, " + C_SOURCE + " text, " 
 				+ C_USER + " text, " + C_TEXT + " text)";
 		
 		db.execSQL(sql);
