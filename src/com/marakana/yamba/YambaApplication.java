@@ -103,4 +103,10 @@ public class YambaApplication extends Application implements OnSharedPreferenceC
 		}
 	}
 
+	public SharedPreferences getPrefs() {
+		prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		prefs.registerOnSharedPreferenceChangeListener(this);
+		return prefs;
+	}
+
 }

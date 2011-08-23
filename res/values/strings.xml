@@ -19,4 +19,9 @@
     <string name="itemPrefs">ItemPrefs</string>
     <string name="titleServiceStart">titleServiceStart</string>
     <string name="titleServiceStop">titleServiceStop</string>
+    
+    <string name="titleTimeline">Timeline</string>
+    <string name="msgSetupPrefs">Insert a username valid</string>
+    <string name="titlePurge">Title Purge</string>
+    
 </resources>

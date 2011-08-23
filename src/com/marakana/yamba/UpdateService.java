@@ -13,9 +13,9 @@ public class UpdateService extends Service {
 	private static final String TAG = "UpdateService";
 	
 	static final int DELAY = 60000; // wait a minute
-	private boolean runFlag = false;
-	private Updater updater;
-	private YambaApplication yambaApplication;
+	boolean runFlag = false;
+	Updater updater;
+	YambaApplication yambaApplication;
 	
 	DbHelper dbHelper;
 	SQLiteDatabase db;

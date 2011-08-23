@@ -113,32 +113,35 @@ public class StatusActivity extends Activity implements OnClickListener, TextWat
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
 		Log.d(TAG, "onTextChanged");
 	}
+//	
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		Log.d(TAG, "onCreateOptionsMenu");
+//		MenuInflater inflater = getMenuInflater();
+//		inflater.inflate(R.menu.menu, menu);
+//		return true;
+//	}
 	
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		Log.d(TAG, "onCreateOptionsMenu");
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.menu, menu);
-		return true;
-	}
-	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		Log.d(TAG, "onOptionsItemSelected");
-		switch (item.getItemId()) {
-		case R.id.itemPrefs:
-			startActivity(new Intent(this, PrefsActivity.class));
-			break;
-		case R.id.itemServiceStart:
-			startService(new Intent(this, UpdateService.class));
-			break;
-		case R.id.itemServiceStop:
-			stopService(new Intent(this, UpdateService.class));
-			break;
-		}
-		
-		return true;
-	}
+	/*
+	 * Método que chama serviço para seguinte cliques no menu
+	 */
+//	@Override
+//	public boolean onOptionsItemSelected(MenuItem item) {
+//		Log.d(TAG, "onOptionsItemSelected");
+//		switch (item.getItemId()) {
+//		case R.id.itemPrefs:
+//			startActivity(new Intent(this, PrefsActivity.class));
+//			break;
+//		case R.id.itemServiceStart:
+//			startService(new Intent(this, UpdateService.class));
+//			break;
+//		case R.id.itemServiceStop:
+//			stopService(new Intent(this, UpdateService.class));
+//			break;
+//		}
+//		
+//		return true;
+//	}
 
 	@Override
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {

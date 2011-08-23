@@ -110,4 +110,10 @@ public class StatusData {
 			db.close();
 		}
 	}
+
+	public void delete() {
+		SQLiteDatabase db = this.dbHelper.getWritableDatabase();
+		
+		
+	}
 }
