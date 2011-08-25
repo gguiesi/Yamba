@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<!-- <item android:title="@string/titlePrefs" android:id="@+id/itemPrefs" 
-		android:icon="@android:drawable/ic_menu_preferences"></item> <item android:title="@string/titleServiceStart" 
-		android:id="@+id/itemServiceStart" android:icon="@android:drawable/ic_media_play"/> 
-		<item android:title="@string/titleServiceStop" android:id="@+id/itemServiceStop" 
-		android:icon="@android:drawable/ic_media_pause"/> -->
-
 	<item android:id="@+id/itemStatus" android:title="@string/titleStatus"
 		android:icon="@android:drawable/ic_menu_edit"></item>
 	<item android:id="@+id/itemTimeline" android:title="@string/titleTimeline"
