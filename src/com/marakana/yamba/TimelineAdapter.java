@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class TimelineAdapter extends SimpleCursorAdapter {
 	static final String[] FROM = {DbHelper.C_CREATED_AT, DbHelper.C_USER, DbHelper.C_TEXT};
-	static final int[] TO = {};
+	static final int[] TO = {R.id.textCreatedAt, R.id.textUser, R.id.textText};
 	
 	public TimelineAdapter(Context context, Cursor c) {
 		super(context, R.layout.row, c, FROM, TO);
