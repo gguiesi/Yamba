@@ -13,6 +13,10 @@ public class UpdateService extends Service {
 	private static final String TAG = "UpdateService";
 	
 	static final int DELAY = 60000; // wait a minute
+
+	public static final String NEW_STATUS_INTENT = "com.marakana.yamba.NEW_STATUS";
+
+	public static final String NEW_STATUS_EXTRA_COUNT = "com.marakana.yamba.NEW_STATUS_EXTRA_COUNT";
 	boolean runFlag = false;
 	Updater updater;
 	YambaApplication yambaApplication;
@@ -61,6 +65,8 @@ public class UpdateService extends Service {
 	}
 	
 	class Updater extends Thread {
+		Intent intent;
+		
 		private List<Status> timeline;
 
 		public Updater() {
@@ -72,12 +78,15 @@ public class UpdateService extends Service {
 		public void run() {
 			UpdateService updateService = UpdateService.this;
 			while (updateService.runFlag) {
-				Log.d(TAG, "Updater Running");
+				Log.d(TAG, "Running background thread");
 				try {
 					YambaApplication yamba = (YambaApplication) updateService.getApplication();
 					int newUpdates = yamba.fetchStatusUpdates();
 					if (newUpdates > 0) {
 						Log.d(TAG, "We have a new Status");
+						intent = new Intent(NEW_STATUS_INTENT);
+						intent.putExtra(NEW_STATUS_EXTRA_COUNT, newUpdates);
+						updateService.sendBroadcast(intent);
 					}
 					Thread.sleep(DELAY);
 				} catch (InterruptedException e) {
