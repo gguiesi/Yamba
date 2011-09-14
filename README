@@ -1,4 +1,4 @@
 Client twitter for android
 - Para montar o ambiente só fazer um clone do projeto e importar como um projeto java
-
 - Necessário android-sdk_r12, pelo menos, eclipse clássico
+- Crie seu user no http://yamba.marakana.com/api e insira o user e senha no menu da apicação. Não me lembro qual é a opção.
